@@ -93,16 +93,36 @@ function hexConverter(value) {
   return sum;
 }
 
+function romanNumeral(num) {
+  let result = "";
+  const digits = (''+num).split('');
+
+  const ones = ['','i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix'];
+  const tens = ['','x', 'xx', 'xxx', 'xl', 'l', 'lx', 'lxx', 'lxxx', 'xc'];
+  const hundreds = ['','c', 'cc', 'ccc', 'cd', 'd', 'dc', 'dcc', 'dccc', 'cm'];
+
+  if(digits.length === 1)
+  {
+    return ones[parseInt(digits[1])];
+  }
+  else if(digits.length === 2)
+  {
+    return tens[parseInt(digits[0])]   + ones[parseInt(digits[1])];
+  }
+  else if(digits.length === 3)
+  {
+    return hundreds[parseInt(digits[0])]   + tens[parseInt(digits[1])] + ones[parseInt(digits[2])];
+  }
+};
 
 // UI Logic
-
-
 $(document).ready(function(){
   $("form#pig").submit(function(event){
     event.preventDefault();
     const passage = $("#text-passage").val();
     const binaryNum = $("#binaryNumber").val();
     const hexNum = $("#hexNumber").val();
+    const decimal = $("#decimal").val();
     let pigResult = "";
     let array = passage.split(' ');
     for(let i = 0; i < array.length; i++)
@@ -113,6 +133,7 @@ $(document).ready(function(){
     $("#pigLatin").html(pigResult);
     $("#binaryNum").html(binaryConverter(binaryNum));
     $("#hexNum").html(hexConverter(hexNum));
+    $("#romanNumerals").html(romanNumeral(decimal));  
     $(".result").show();
   });
 });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Pig Latin Translator</title>
+  <title>Pig Latin Translator and Number Converters</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@
           <div class="col-md-4">
             <h5>binary number form:</h5>
             <input id="binaryNumber" name="binaryNumber" type="text"></input>
-            <br>
+            <br> <br>
             <div class="result">
               <h6>Decimal form:<br></h6>
               <span id="binaryNum"></span>
@@ -39,17 +39,28 @@
           <div class="col-md-4">
             <h5>Hexadecimal number form:</h5>
             <input id="hexNumber" name="hexNumber" type="text"></input>
-            <br>
+            <br><br>
             <div class="result">
               <h6>Decimal form:<br></h6>
               <span id="hexNum"></span>
             </div>
             <br>
           </div>
+
+          <div class="col-md-4">
+            <h5>Decimal to Roman Numeral:</h5>
+            <input id="decimal" name="decimal" type="text"></input>
+            <br><br>
+            <div class="result">
+              <h6>Roman Numerals form:<br></h6>
+              <span id="romanNumerals"></span>
+            </div>
+            <br>
+          </div>
+
         </div>
         <br>
-        <br>
-        <br>
+
         <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </form>
