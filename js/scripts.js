@@ -103,7 +103,7 @@ function romanNumeral(num) {
 
   if(digits.length === 1)
   {
-    return ones[parseInt(digits[1])];
+    return ones[parseInt(digits[0])];
   }
   else if(digits.length === 2)
   {
